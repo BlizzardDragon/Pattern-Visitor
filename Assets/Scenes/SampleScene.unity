@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 56759337}
   - component: {fileID: 56759336}
   - component: {fileID: 56759335}
+  - component: {fileID: 56759339}
   m_Layer: 0
   m_Name: Quad
   m_TagString: Untagged
@@ -232,6 +233,19 @@ Transform:
   - {fileID: 1145678934}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!114 &56759339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 56759334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8ef94710932c1348bcce7320c8b6c08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _speed: 60
 --- !u!1 &185839952
 GameObject:
   m_ObjectHideFlags: 0
