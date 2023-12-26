@@ -13,20 +13,24 @@ public class Trigger : MonoBehaviour, ITriggerVisitor
     public void Visit(Cube cube)
     {
         cube.PlayRotation();
-        Print(cube);
+        Print(cube, Color.yellow);
     }
 
     public void Visit(Sphere sphere)
     {
         sphere.PlayPunchScale();
-        Print(sphere);
+        Print(sphere, Color.red);
     }
 
     public void Visit(Cylinder cylinder)
     {
         cylinder.PlayJump();
-        Print(cylinder);
+        Print(cylinder, Color.blue);
     }
 
-    private void Print(MonoBehaviour mono) => print($"Visited {mono.name}!");
+    private void Print(MonoBehaviour mono, Color color)
+    {
+        string formattedText = $"<color=#{ColorUtility.ToHtmlStringRGB(color)}>{mono.name}</color>";
+        print($"Visited {formattedText}!");
+    }
 }
