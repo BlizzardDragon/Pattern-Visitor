@@ -4,6 +4,9 @@ using UnityEngine;
 public class Cube : MonoBehaviour, ITriggerVisitor
 {
     [SerializeField] private GameObject _view;
+    
+    private const float Duration = 1f;
+    private const int EndValueY = 360;
 
 
     void ITriggerVisitor.Visit(BlueTrigger blue)
@@ -24,5 +27,8 @@ public class Cube : MonoBehaviour, ITriggerVisitor
         _view.SetActive(true);
     }
 
-    private void PlayRotation() => _view.transform.DOLocalRotate(Vector3.up * 360, 1f, RotateMode.FastBeyond360);
+    private void PlayRotation()
+    {
+        _view.transform.DOLocalRotate(Vector3.up * EndValueY, Duration, RotateMode.FastBeyond360);
+    }
 }

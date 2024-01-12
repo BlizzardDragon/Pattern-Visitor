@@ -4,7 +4,12 @@ using UnityEngine;
 public class Cylinder : MonoBehaviour, ITriggerVisitor
 {
     [SerializeField] private GameObject _view;
+    
     private Vector3 _startpLocalPosition;
+
+    private const int JumpPower = 4;
+    private const int NumJumps = 1;
+    private const float Duration = 0.5f;
 
 
     private void Start() => _startpLocalPosition = _view.transform.localPosition;
@@ -27,5 +32,5 @@ public class Cylinder : MonoBehaviour, ITriggerVisitor
         _view.SetActive(true);
     }
 
-    private void PlayJump() => _view.transform.DOLocalJump(_startpLocalPosition, 4, 1, 0.5f);
+    private void PlayJump() => _view.transform.DOLocalJump(_startpLocalPosition, JumpPower, NumJumps, Duration);
 }

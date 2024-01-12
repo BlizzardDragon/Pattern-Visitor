@@ -4,6 +4,11 @@ using UnityEngine;
 public class Sphere : MonoBehaviour, ITriggerVisitor
 {
     [SerializeField] private GameObject _view;
+    
+    private const float PunchY = 1.5f;
+    private const float Duration = 1f;
+    private const int Vibrato = 4;
+    private const int Elasticity = 0;
 
 
     void ITriggerVisitor.Visit(BlueTrigger blue)
@@ -24,5 +29,8 @@ public class Sphere : MonoBehaviour, ITriggerVisitor
         _view.SetActive(true);
     }
 
-    public void PlayPunchScale() => _view.transform.DOPunchScale(Vector3.one * 1.5f, 1f, 4, 0);
+    public void PlayPunchScale()
+    {
+        _view.transform.DOPunchScale(Vector3.one * PunchY, Duration, Vibrato, Elasticity);
+    }
 }
