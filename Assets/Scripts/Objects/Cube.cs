@@ -1,11 +1,14 @@
 using DG.Tweening;
 using UnityEngine;
 
-public class Cube : MonoBehaviour, ITriggerVisitable
+public class Cube : MonoBehaviour, ITriggerVisitor
 {
-    [SerializeField] private Transform _view;
+    [SerializeField] private GameObject _view;
 
 
-    public void Accept(ITriggerVisitor visitor) => visitor.Visit(this);
-    public void PlayRotation() => _view.DOLocalRotate(Vector3.up * 360, 1f, RotateMode.FastBeyond360);
+    void ITriggerVisitor.Visit(BlueTrigger blue) => PlayRotation();
+    void ITriggerVisitor.Visit(RedTrigger red) => _view.SetActive(false);
+    void ITriggerVisitor.Visit(GreenTrigger green) => _view.SetActive(true);
+    
+    private void PlayRotation() => _view.transform.DOLocalRotate(Vector3.up * 360, 1f, RotateMode.FastBeyond360);
 }
