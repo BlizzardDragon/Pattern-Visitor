@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Trigger
+  m_Name: RedTrigger
   m_Shader: {fileID: 4800000, guid: 650dd9526735d5b46b79224bc6e94025, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -131,8 +131,8 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 0
     m_Colors:
-    - _BaseColor: {r: 0.26166892, g: 0.754717, b: 0.18986586, a: 0.36078432}
-    - _Color: {r: 0.2616689, g: 0.75471693, b: 0.18986583, a: 0.36078432}
+    - _BaseColor: {r: 0.7529412, g: 0.19264533, b: 0.1882353, a: 0.36078432}
+    - _Color: {r: 0.7529412, g: 0.19264528, b: 0.18823525, a: 0.36078432}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
