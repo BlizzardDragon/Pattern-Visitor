@@ -1,14 +1,17 @@
 using DG.Tweening;
 using UnityEngine;
 
-public class Cylinder : MonoBehaviour, ITriggerVisitable
+public class Cylinder : MonoBehaviour, ITriggerVisitor
 {
-    [SerializeField] private Transform _view;
+    [SerializeField] private GameObject _view;
     private Vector3 _startpLocalPosition;
-    
-    
-    private void Start() => _startpLocalPosition = _view.localPosition;
-    
-    public void Accept(ITriggerVisitor visitor) => visitor.Visit(this);
-    public void PlayJump() => _view.DOLocalJump(_startpLocalPosition, 4, 1, 0.5f);
+
+
+    private void Start() => _startpLocalPosition = _view.transform.localPosition;
+
+    void ITriggerVisitor.Visit(BlueTrigger blue) => PlayJump();
+    void ITriggerVisitor.Visit(RedTrigger red) => _view.SetActive(false);
+    void ITriggerVisitor.Visit(GreenTrigger green) => _view.SetActive(true);
+
+    private void PlayJump() => _view.transform.DOLocalJump(_startpLocalPosition, 4, 1, 0.5f);
 }
