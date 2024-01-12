@@ -16,19 +16,19 @@ public class Cylinder : MonoBehaviour, ITriggerVisitor
 
     void ITriggerVisitor.Visit(BlueTrigger blue)
     {
-        PrintUtility.Print(nameof(blue), Color.blue);
+        PrintUtility.Print(blue.GetType().Name, Color.blue);
         PlayJump();
     }
 
     void ITriggerVisitor.Visit(RedTrigger red)
     {
-        PrintUtility.Print(nameof(red), Color.red);
+        PrintUtility.Print(red.GetType().Name, Color.red);
         _view.SetActive(false);
     }
 
     void ITriggerVisitor.Visit(GreenTrigger green)
     {
-        PrintUtility.Print(nameof(green), Color.green);
+        PrintUtility.Print(green.GetType().Name, Color.green);
         _view.SetActive(true);
     }
 
